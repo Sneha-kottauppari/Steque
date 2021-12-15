@@ -70,7 +70,17 @@ public class Steque<Item> implements Iterable<Item> {
      * inserts an item in the steque in stack fashion.
      * @param item Item to be inserted.
      */
+    //time complexity is O(1);space complexity O(N)
     public void push(Item item) {
+        if(item==null)
+            throw new IllegalArgumentException();
+        Node<Item> oldfirst = first;
+        first = new Node<Item>();
+        first.item = item;
+        first.next = oldfirst;
+        if(last==null)
+            last=first;
+        n++;
 
     }
     
