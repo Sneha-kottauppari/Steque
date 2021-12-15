@@ -55,7 +55,14 @@ public class Steque<Item> implements Iterable<Item> {
      * @param item Item to be inserted.
      */
     public void enqueue(Item item) {
-
+        if(item==null) throw new IllegalArgumentException();
+        Node<Item> oldlast = last;
+        last = new Node<Item>();
+        last.item = item;
+        last.next = null;
+        if (isEmpty()) first = last;
+        else  oldlast.next = last;
+        n++;
     }
     
     
