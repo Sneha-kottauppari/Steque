@@ -143,5 +143,23 @@ public class Steque<Item> implements Iterable<Item> {
         }
     }
 
+    public static void main(String[] args) {
+        Steque<Integer>  steq = new Steque<Integer>();
+        steq.enqueue(1);
+        steq.enqueue(2);
+        steq.push(7);
+        steq.push(15);
+        Iterator<Integer> i=steq.iterator();
+        System.out.println("elements in steque:");
+        while(i.hasNext()){
+        System.out.print(i.next()+" ");
+        }
+        while(!steq.isEmpty()){
+            System.out.println(steq.pop());
+        }
+
+        
+    }
+
 
 }
